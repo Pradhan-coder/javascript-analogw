@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript-Watch</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+                <div class="clock">
+                    <div class="hour">
+                        <div class="hr" id="hr"></div>
+                    </div>
+                    <div class="minute">
+                        <div class="mn" id="mn"></div>
+                    </div>
+                    <div class="second">
+                        <div class="sc" id="sc"></div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                 const hourHr = document.getElementById('hr');
+                 const minuteMn = document.getElementById('mn');
+                 const secondSc = document.getElementById('sc');
+
+                  setInterval(updateClock, 1000);
+
+                 function updateClock() {
+                     let date = new Date();
+                     let hr = date.getHours() / 12;
+                     let mn = date.getMinutes() / 60;
+                     let sc = date.getSeconds() / 60;
+
+                     hourHr.style.transform ="rotate(" + (hr * 360)  + "deg)";
+                     minuteMn.style.transform ="rotate(" + (mn * 360) + "deg)";
+                     secondSc.style.transform ="rotate(" + (sc * 360) + "deg)";
+
+                 }
+
+                </script>
+        
+    </body>
+    </html>
